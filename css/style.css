@@ -441,4 +441,34 @@ body.active .contato{
 		margin: initial;
 		margin-right: 1em; 
 	}
+	.projetos{
+		padding:10px;
+	}
+	.projetos .title{
+		padding: 40px
+	}
+	.projetos .container {
+		flex-direction: column;
+		width: 320px;
+		height: 100%;
+		margin-left: 50%;
+		margin-right: 50%;
+		margin: 10px;
+		z-index: 1;
+	}
+	.projetos .container .imag {
+		display: flex;
+		height: 179px;
+		min-width: 155px;
+	}
+	.projetos .container .imag img{
+		width: 320px;
+		clip-path: none;
+		margin: 0;
+		padding: 0;
+	}
+	.projetos .text-container {
+		margin: 20px 30px;
+		max-width: 660px;
+	}
 }
