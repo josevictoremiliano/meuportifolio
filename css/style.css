@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 	font-family: sans-serif, lucida;
 }
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: inherit;
+}
 body { 
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1; 
