@@ -1,0 +1,245 @@
+:root{
+    --title-color: #40c3ff;
+	--cor-primaria: #34cd79;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif, lucida;
+	scroll-behavior: smooth;
+}
+body { 
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
+	background-color: black;
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0.1; 
+	} 
+	50%{
+		opacity: 0.5;
+	}
+	75%{
+		opacity: 0.9;
+	}
+    100% { 
+        opacity: 1; 
+     } 
+} 
+.text-center {
+    text-align: center !important;
+}
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 100px;
+	z-index: 1000;
+	transition: 0.6s;
+}
+header .logo{
+	position: relative;
+	font-weight: 700;
+	color: #fff;
+	text-decoration: none;
+	font-size: 2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: 0.9s;
+}
+header .logo img{
+	width: 50px;
+}
+header #toggle{
+	position: fixed;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	right: 40px;
+}
+header #toggle:before{
+	content: '';
+	position: absolute;
+	top: 7px;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+}
+header #toggle:after{
+	content: '';
+	position: absolute;
+	bottom: 7px;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+}
+body.active header #toggle:before{
+	top: 50%;
+	left: 50%;
+	transform:	translate(-50%, -50%)
+				rotate(45deg);
+}
+body.active header #toggle:after{
+	top: 50%;
+	left: 50%;
+	transform:	translate(-50%, -50%)
+				rotate(-45deg);
+}
+.banner{
+	position: relative;
+	width: 100%;
+	min-height:100vh;
+	padding: 100px;
+	background-image: url(../img/back.jpg);
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	transition:0.6s
+}
+/* Desliza o conteúdo para direita*/
+body.active .banner,
+body.active .sobre,
+body.active .projetos,
+body.active .contato{
+	transform: translateX(-400px);
+}
+#navegacao{
+	position: fixed;
+	top: 0;
+	right: -400px;
+	width: 400px;
+	height: 100vh;
+	background-color: cornflowerblue;
+	z-index: 1;
+	display: grid;
+	place-items: center;
+	transition: 0.6s;
+}
+#navegacao.active{
+	right: 0;
+}
+#navegacao ul{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+#navegacao ul li{
+	list-style: none;
+}
+#navegacao ul li a{
+	color: #fff;
+	text-decoration: none;
+	display: inline-flex;
+	font-size: 2em;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+#navegacao ul li a:hover{
+	color: black;
+}
+.content{
+	max-width: 600px;
+	transition: 400ms;
+}
+.content h2{
+	color: white;
+	font-size: 2.5em;
+}
+.content h2 span{
+	color: var(--title-color);
+	font-size: 1em;
+}
+.content p{
+	color: white;
+	font-size: 1.2em;
+	font-weight: 300;
+}
+.content a,
+.sobre .center .texto a{
+	position: relative;
+	display: inline-block;
+	margin-top: 25px;
+	background: white;
+	color: black;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: 500;
+	border-radius: 3px;
+	transition: 700ms;
+}
+.content a:hover,
+.sobre .center .texto a:hover{
+	background: black;
+	color: var(--title-color);
+}
+.content a.btn-acao-curriculo{
+	background: black;
+	color: var(--title-color);
+}
+.content a.btn-acao-curriculo:hover{
+	background: white;
+	color: black;
+}
+
+
+@media screen and (min-width: 1024px) {
+	.projetos .container {
+		max-width: 1200px;
+	}
+}
+
+
+
+
+/*Midia  Querys*/
+@media (max-width: 830px){
+	header{
+		padding: 20px 50px;
+	}
+	.banner,
+	.sobre{
+		padding: 100px 50px 150px;
+	}
+	.banner h2{
+		font-size: 1.8em;
+	}
+	.banner p,
+	.sobre p{
+		font-size: 1em;
+	}
+	.banner .content a,
+	.banner .content p{
+		font-size: 1em;
+	}
+	body.active .banner,
+	body.active .sobre,
+	body.active .projetos,
+	body.active .contato{
+		transform: translateX(-250px)
+	}
+	#navegacao{
+		width: 250px;
+	}
+	#navegacao ul li a{
+		font-size:	1.5em;
+		margin: 5px 0 0;
+	}
+	.social{
+		position: absolute;
+		bottom: 50px;
+		right: initial !important;
+		flex-direction: row !important;
+	}
+	.social li a {
+		margin: initial;
+		margin-right: 1em; 
+	}
+}

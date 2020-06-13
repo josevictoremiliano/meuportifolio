@@ -1,0 +1,111 @@
+/*Projetos start*/
+.projetos{
+	position: relative;
+	width: 100%;
+	min-height:100vh;
+	padding: 100px;
+	background: linear-gradient(to top, #131212 0%, #000000 120%);
+	background-size: cover;
+	align-items: center;
+	transition:0.6s;
+	color: white;
+}
+
+/* itens */
+.projetos .p-items{
+	display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+margin-right: -15px;
+margin-left: -15px;
+}
+.projetos .container{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.projetos .title{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.projetos .title h1{
+	font-size: 40px;
+	color: var(--title-color);
+}
+.projetos .container .title h1{
+	z-index:1;
+	font-size: 46px;
+	color: var(--title-color);
+}
+.projetos .container .card-box{
+	position: relative;
+	background-color: #fff;
+	width: 350px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	margin-bottom: 25px;
+	flex-direction: column;
+}
+.projetos .container .card-box img{
+	max-width: 100%;
+	height: auto;
+	padding: 3px;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.45);
+}
+.projetos .container .card-box .texto{
+	padding: 20px;
+}
+.projetos .container .card-box h1{
+	color: var(--title-color)
+}
+.projetos .container .card-box p{
+	color: black;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.projetos .container .card-box i.fa-cog{
+	animation: rotating 2s linear infinite;
+	transition: 500ms;
+}
+@keyframes rotating {
+  0%{
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.projetos .container .card-box a{
+	margin-top: 20px;
+	text-decoration: none;
+	color: var(--cor-primaria);
+	transition: 400ms;
+}
+.projetos .container .card-box a:hover{
+	color: red;
+}
+@media (max-width: 870px){
+	.projetos {
+	padding: 60px;
+	}
+}
+@media (max-width: 794px){
+	.projetos .container{
+	justify-content: center;
+	}
+}
